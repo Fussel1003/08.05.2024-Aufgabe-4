@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreisgröße ändern</title>
+    <style>
+        #circle {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kreisgröße ändern</h1>
+    <div id="circle"></div>
+    <label for="radiusInput">Radius eingeben:</label>
+    <input type="number" id="radiusInput">
+    <button onclick="resizeCircle()">Größe ändern</button>
+
+    <script>
+        function getDiameter(radius) {
+            return radius * 2;
+        }
+
+        function resizeCircle() {
+            var radius = parseInt(document.getElementById("radiusInput").value);
+            var diameter = getDiameter(radius);
+            var circle = document.getElementById("circle");
+            circle.style.width = diameter + "px";
+            circle.style.height = diameter + "px";
+        }
+    </script>
+</body>
+</html>
